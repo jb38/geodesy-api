@@ -1,8 +1,5 @@
 package com.esri.services.geodesy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.esri.core.geometry.Geometry.Type;
 import com.esri.core.geometry.GeometryEngine;
 import com.esri.core.geometry.Point;
@@ -74,8 +71,6 @@ public final class GeodesyEngine {
 
 		double xFrom, yFrom, bearing, a, b, c, xWaypoint, yWaypoint;
 
-		List<Point> waypoints = new ArrayList<Point>();
-
 		for (int i = 0; i < numPoints; i++) {
 			xFrom = iterativeFrom.getX() * DEG2RAD;
 			yFrom = iterativeFrom.getY() * DEG2RAD;
@@ -99,8 +94,6 @@ public final class GeodesyEngine {
 			}
 
 			xWaypoint *= RAD2DEG;
-
-			waypoints.add(new Point(xWaypoint, yWaypoint));
 
 			if (i > 0) {
 				sb.append(",");
